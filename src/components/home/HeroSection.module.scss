@@ -18,10 +18,29 @@
   }
 }
 
-.content {
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-8;
+  align-items: center;
   position: relative;
   z-index: 2;
-  max-width: 920px;
+
+  @include lg {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: $space-12;
+  }
+}
+
+.content {
+  max-width: 640px;
+}
+
+.visualColumn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .eyebrow {

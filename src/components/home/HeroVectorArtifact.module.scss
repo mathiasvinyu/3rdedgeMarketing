@@ -1,0 +1,162 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.artifactStage {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, rgba(26, 29, 35, 0.85) 0%, rgba(20, 22, 26, 0.95) 100%);
+  border: 1px solid rgba(106, 114, 127, 0.25);
+  border-radius: $radius-lg;
+  padding: $space-4;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(234, 88, 7, 0.04);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    border-color: rgba(234, 88, 7, 0.4);
+    box-shadow: 0 28px 56px -12px rgba(0, 0, 0, 0.7), 0 0 60px rgba(234, 88, 7, 0.08);
+  }
+
+  @include lg {
+    padding: $space-6;
+  }
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-2;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid rgba(106, 114, 127, 0.2);
+}
+
+.windowControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(168, 174, 182, 0.3);
+    transition: background-color $transition-fast;
+
+    &:nth-child(1) { background-color: rgba(234, 88, 7, 0.6); }
+    &:nth-child(2) { background-color: rgba(255, 204, 0, 0.5); }
+    &:nth-child(3) { background-color: rgba(106, 114, 127, 0.5); }
+  }
+
+  .title {
+    font-family: $font-display;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: $color-slate-light;
+    margin-left: $space-2;
+    text-transform: uppercase;
+  }
+}
+
+.layerPills {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(20, 22, 26, 0.6);
+  padding: 3px;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(106, 114, 127, 0.2);
+}
+
+.layerBtn {
+  font-family: $font-body;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: $color-slate-light;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-text-primary;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    color: $color-text-primary;
+    background: rgba(234, 88, 7, 0.2);
+    border: 1px solid rgba(234, 88, 7, 0.5);
+    box-shadow: 0 0 10px rgba(234, 88, 7, 0.15);
+  }
+
+  @include focus-visible;
+}
+
+.svgViewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 540 / 380;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+}
+
+.stageFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $space-2;
+  border-top: 1px solid rgba(106, 114, 127, 0.15);
+  font-size: 0.75rem;
+  color: $color-slate-base;
+
+  .metricGroup {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  .metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    strong {
+      color: $color-text-primary;
+      font-weight: 600;
+    }
+
+    .statusIndicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #10b981; // emerald live indicator
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+    }
+  }
+
+  .auditBadge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $color-orange;
+    text-transform: uppercase;
+  }
+}
