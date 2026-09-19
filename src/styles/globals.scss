@@ -1,0 +1,93 @@
+// 3rd Edge Creative — Global Master SCSS
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'base/reset';
+@use 'base/typography';
+
+// -----------------------------------------------------------------------------
+// CSS Custom Properties (Tokens accessible in JS / inline if needed)
+// -----------------------------------------------------------------------------
+:root {
+  --bg-dominant: #{$color-charcoal-base};
+  --bg-surface: #{$color-charcoal-surface};
+  --bg-elevated: #{$color-charcoal-elevated};
+
+  --text-primary: #{$color-text-primary};
+  --text-secondary: #{$color-text-secondary};
+  --text-muted: #{$color-text-muted};
+
+  --border-default: #{$color-border};
+  --border-subtle: #{$color-border-subtle};
+
+  --accent-orange: #{$color-orange};
+  --accent-orange-hover: #{$color-orange-hover};
+  --accent-orange-active: #{$color-orange-active};
+  --accent-orange-glow: #{$color-orange-glow};
+
+  --highlight-yellow: #{$color-yellow};
+
+  --font-display: #{$font-display};
+  --font-body: #{$font-body};
+}
+
+// -----------------------------------------------------------------------------
+// Global Structure
+// -----------------------------------------------------------------------------
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-dominant);
+  color: var(--text-primary);
+}
+
+::selection {
+  background-color: var(--accent-orange);
+  color: #ffffff;
+}
+
+// Accessibility focus ring
+*:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 3px;
+}
+
+// -----------------------------------------------------------------------------
+// Global Utility Classes
+// -----------------------------------------------------------------------------
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+  position: relative;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-accent {
+  color: var(--accent-orange);
+}
+
+.text-highlight {
+  color: var(--highlight-yellow); // Only for single emphasized words/underlines, never long copy
+}
+
+.sr-only {
+  @include visually-hidden;
+}
+
+@include reduced-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

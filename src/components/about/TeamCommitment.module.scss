@@ -1,0 +1,40 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.wrapper {
+  background-color: $color-charcoal-base;
+  @include section-padding;
+}
+
+.commitmentBox {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: $space-6;
+  background-color: $color-charcoal-surface;
+  border-left: 3px solid $color-orange;
+  border-radius: 0 $radius-md $radius-md 0;
+
+  @include md {
+    padding: $space-8;
+  }
+
+  p {
+    font-family: $font-display;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: $color-text-primary;
+    letter-spacing: -0.01em;
+  }
+}
+
+.keywordsLine {
+  max-width: 860px;
+  margin: $space-8 auto 0 auto;
+  padding-top: $space-6;
+  border-top: 1px solid $color-border-subtle;
+  color: $color-text-muted;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  text-align: center;
+}

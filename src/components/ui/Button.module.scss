@@ -1,0 +1,75 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  font-family: $font-body;
+  font-weight: 600;
+  border-radius: $radius-sm;
+  transition: all $transition-base;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  @include focus-visible;
+
+  // Sizes
+  &.sm {
+    padding: 6px $space-2;
+    font-size: 0.875rem;
+  }
+
+  &.md {
+    padding: 12px $space-3;
+    font-size: 1rem;
+    min-height: 48px; // Accessible touch target
+  }
+
+  &.lg {
+    padding: 16px $space-4;
+    font-size: 1.125rem;
+    min-height: 56px;
+  }
+
+  // Variants
+  &.primary {
+    background-color: $color-orange;
+    color: $color-charcoal-base;
+    font-weight: 700;
+    border-color: $color-orange;
+
+    &:hover {
+      background-color: $color-orange-hover;
+      border-color: $color-orange-hover;
+      box-shadow: 0 4px 16px $color-orange-glow;
+    }
+
+    &:active {
+      background-color: $color-orange-active;
+    }
+  }
+
+  &.secondary {
+    background-color: $color-charcoal-elevated;
+    color: $color-text-primary;
+    border-color: $color-border;
+
+    &:hover {
+      background-color: $color-charcoal-hover;
+      border-color: $color-slate-base;
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: $color-orange;
+    border-color: $color-orange;
+
+    &:hover {
+      background-color: rgba($color-orange, 0.08);
+    }
+  }
+}

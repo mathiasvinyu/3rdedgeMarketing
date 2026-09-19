@@ -1,0 +1,136 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 12, 15, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-2;
+  opacity: 0;
+  animation: fadeIn $transition-base forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: $color-charcoal-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-4;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+
+  @include md {
+    padding: $space-6;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: $space-3;
+  right: $space-3;
+  color: $color-text-muted;
+  padding: $space-1;
+  border-radius: $radius-sm;
+  transition: color $transition-fast;
+  @include focus-visible;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.header {
+  margin-bottom: $space-4;
+
+  h2 {
+    font-family: $font-display;
+    font-size: 1.75rem;
+    margin-bottom: $space-1;
+    color: $color-text-primary;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: 0.95rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-text-primary;
+  }
+
+  input, textarea, select {
+    background-color: $color-charcoal-base;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: 12px $space-2;
+    color: $color-text-primary;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    transition: border-color $transition-fast;
+    @include focus-visible;
+
+    &:hover {
+      border-color: $color-slate-base;
+    }
+
+    &:focus {
+      border-color: $color-orange;
+    }
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+}
+
+.errorText {
+  color: #ff5252;
+  font-size: 0.8125rem;
+}
+
+.successBox {
+  padding: $space-4;
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: $radius-sm;
+  text-align: center;
+
+  h3 {
+    font-family: $font-display;
+    color: #4ade80;
+    margin-bottom: $space-1;
+  }
+
+  p {
+    color: $color-text-secondary;
+  }
+}

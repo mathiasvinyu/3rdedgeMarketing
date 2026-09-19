@@ -1,0 +1,104 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  background-color: rgba(20, 22, 26, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border;
+  transition: all $transition-base;
+}
+
+.navContainer {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+
+  @include lg {
+    height: 80px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text-primary;
+  text-decoration: none;
+  @include focus-visible;
+
+  .logoMark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-orange;
+  }
+
+  .highlightText {
+    color: $color-orange;
+  }
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: $space-4;
+
+  @include md {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $color-text-secondary;
+  transition: color $transition-fast;
+  position: relative;
+  padding: $space-1 0;
+  @include focus-visible;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &.active {
+    color: $color-text-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-orange;
+      border-radius: 1px;
+    }
+  }
+}
+
+.mobileMenuTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-1;
+  color: $color-text-primary;
+  border-radius: $radius-sm;
+  @include focus-visible;
+
+  @include md {
+    display: none;
+  }
+}

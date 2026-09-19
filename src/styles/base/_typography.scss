@@ -1,0 +1,72 @@
+// Typography Rules & Scale (Mobile-First)
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  font-family: $font-body;
+  font-size: 1rem; // 16px
+  font-weight: 400;
+  color: $color-text-primary;
+  background-color: $color-charcoal-base;
+}
+
+// Display & Headlines strictly use Unbounded (never below 24px)
+h1, .display-hero {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 7vw, 5.5rem); // 40px to 88px fluid
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: $color-text-primary;
+}
+
+h2, .section-heading {
+  font-family: $font-display;
+  font-size: clamp(1.75rem, 4vw, 3rem); // 28px to 48px
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: $color-text-primary;
+}
+
+h3, .subhead-large {
+  font-family: $font-display;
+  font-size: clamp(1.5rem, 2.5vw, 2rem); // 24px to 32px (strict floor >= 24px)
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: $color-text-primary;
+}
+
+// Subheadings & UI copy use Montserrat
+h4, .subhead {
+  font-family: $font-body;
+  font-size: 1.25rem; // 20px
+  font-weight: 600;
+  line-height: 1.4;
+  color: $color-text-secondary;
+}
+
+p {
+  font-family: $font-body;
+  font-size: 1rem; // 16px
+  line-height: 1.65;
+  color: $color-text-secondary;
+
+  @include lg {
+    font-size: 1.125rem; // 18px for editorial reading
+    line-height: 1.7;
+  }
+}
+
+.caption, small {
+  font-family: $font-body;
+  font-size: 0.875rem; // 14px
+  line-height: 1.5;
+  color: $color-text-muted;
+}
+
+// Code & technical badges
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

@@ -1,0 +1,77 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.card {
+  background-color: $color-charcoal-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  transition: border-color $transition-fast, transform $transition-fast;
+
+  .linkOverlay {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include focus-visible;
+  }
+
+  &:hover {
+    border-color: $color-slate-base;
+    transform: translateY(-2px);
+
+    .readMore {
+      color: $color-orange;
+    }
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+    margin-bottom: $space-2;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    color: $color-text-primary;
+    margin-bottom: $space-2;
+    line-height: 1.35;
+  }
+
+  .excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $color-text-secondary;
+    margin-bottom: $space-4;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: $space-3;
+    border-top: 1px solid $color-border-subtle;
+  }
+
+  .topicBadge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: $color-orange;
+  }
+
+  .readMore {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-text-secondary;
+    transition: color $transition-fast;
+  }
+}

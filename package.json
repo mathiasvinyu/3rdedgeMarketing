@@ -1,0 +1,38 @@
+{
+  "name": "3rdedge-marketing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:unit": "vitest run",
+    "test:copy": "vitest run tests/unit/copy-linter.test.ts",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test tests/e2e/a11y.spec.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "^3.90.1",
+    "@payloadcms/next": "^3.90.1",
+    "@payloadcms/richtext-lexical": "^3.90.1",
+    "gsap": "^3.12.7",
+    "lucide-react": "^1.16.0",
+    "next": "^16.3.5",
+    "payload": "^3.90.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.85.1",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@types/three": "^0.174.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

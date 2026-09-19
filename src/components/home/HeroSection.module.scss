@@ -1,0 +1,75 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.heroWrapper {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-top: $space-12;
+  padding-bottom: $space-12;
+  background-color: $color-charcoal-base;
+  overflow: hidden;
+
+  @include lg {
+    min-height: 90vh;
+    padding-top: $space-16;
+    padding-bottom: $space-16;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  font-family: $font-body;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-orange;
+  margin-bottom: $space-2;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-orange;
+  }
+}
+
+.headline {
+  margin-bottom: $space-4;
+  color: $color-text-primary;
+}
+
+.subhead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: $color-text-secondary;
+  margin-bottom: $space-6;
+  max-width: 720px;
+
+  @include md {
+    font-size: 1.25rem;
+  }
+}
+
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  align-items: stretch;
+
+  @include sm {
+    flex-direction: row;
+    align-items: center;
+    gap: $space-3;
+  }
+}

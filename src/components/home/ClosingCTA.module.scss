@@ -1,0 +1,47 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.ctaWrapper {
+  background-color: $color-charcoal-base;
+  @include section-padding;
+  text-align: center;
+  position: relative;
+}
+
+.box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: $space-6;
+  background-color: $color-charcoal-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  position: relative;
+  overflow: hidden;
+
+  @include md {
+    padding: $space-12;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $color-orange, transparent);
+  }
+
+  h2 {
+    color: $color-text-primary;
+    margin-bottom: $space-3;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: $space-6;
+  }
+}

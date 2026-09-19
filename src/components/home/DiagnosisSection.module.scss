@@ -1,0 +1,65 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.diagnosisWrapper {
+  background-color: $color-charcoal-surface;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  @include section-padding;
+}
+
+.inner {
+  max-width: 960px;
+}
+
+.label {
+  font-family: $font-body;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-slate-light;
+  margin-bottom: $space-3;
+}
+
+.heading {
+  margin-bottom: $space-4;
+  color: $color-text-primary;
+}
+
+.narrativeText {
+  font-family: $font-display;
+  font-size: clamp(1.35rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: $color-text-secondary; // Fully WCAG 2.1 AA compliant base contrast
+  letter-spacing: -0.015em;
+
+  .phrase {
+    transition: color 0.3s ease, opacity 0.3s ease;
+    display: inline;
+
+    &.illuminated {
+      color: $color-text-primary;
+    }
+
+    &.highlight {
+      color: $color-orange;
+    }
+  }
+}
+
+@include reduced-motion {
+  .narrativeText {
+    color: $color-text-primary !important;
+
+    .phrase {
+      color: $color-text-primary !important;
+      opacity: 1 !important;
+
+      &.highlight {
+        color: $color-orange !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.footer {
+  background-color: $color-charcoal-base;
+  border-top: 1px solid $color-border;
+  padding-top: $space-12;
+  padding-bottom: $space-8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+  margin-bottom: $space-12;
+
+  @include md {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: $space-8;
+  }
+}
+
+.brandCol {
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin-bottom: $space-2;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-orange;
+    }
+
+    .accent {
+      color: $color-orange;
+    }
+  }
+
+  .tagline {
+    color: $color-text-secondary;
+    max-width: 440px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.linksCol {
+  h4 {
+    font-family: $font-display;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-text-primary;
+    margin-bottom: $space-3;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  a {
+    color: $color-text-secondary;
+    font-size: 0.95rem;
+    transition: color $transition-fast;
+    @include focus-visible;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
+}
+
+.bottomBar {
+  padding-top: $space-4;
+  border-top: 1px solid $color-border-subtle;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  align-items: center;
+  justify-content: space-between;
+
+  @include md {
+    flex-direction: row;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+  }
+}

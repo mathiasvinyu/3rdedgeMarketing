@@ -1,0 +1,54 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.storyWrapper {
+  background-color: $color-charcoal-base;
+  padding-top: $space-12;
+  padding-bottom: $space-12;
+
+  @include lg {
+    padding-top: $space-16;
+    padding-bottom: $space-16;
+  }
+}
+
+.content {
+  max-width: 860px;
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-orange;
+    margin-bottom: $space-2;
+  }
+
+  h1 {
+    margin-bottom: $space-6;
+    color: $color-text-primary;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: $color-text-secondary;
+    margin-bottom: $space-4;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .lead {
+    color: $color-text-primary;
+    font-weight: 500;
+  }
+}

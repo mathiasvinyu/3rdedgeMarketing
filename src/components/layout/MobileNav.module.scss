@@ -1,0 +1,90 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 12, 15, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 85%;
+  max-width: 360px;
+  height: 100%;
+  background-color: $color-charcoal-surface;
+  border-left: 1px solid $color-border;
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.5);
+  animation: slideIn $transition-base forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-6;
+}
+
+.logoText {
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.closeBtn {
+  color: $color-text-muted;
+  padding: $space-1;
+  @include focus-visible;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  flex: 1;
+}
+
+.navLink {
+  font-family: $font-display;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color-text-secondary;
+  text-decoration: none;
+  padding: $space-1 0;
+  transition: color $transition-fast;
+  @include focus-visible;
+
+  &:hover, &.active {
+    color: $color-orange;
+  }
+}
+
+.ctaWrapper {
+  margin-top: auto;
+  padding-top: $space-4;
+  border-top: 1px solid $color-border;
+}
+
+.fullWidth {
+  width: 100%;
+}

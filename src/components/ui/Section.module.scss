@@ -1,0 +1,28 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.section {
+  position: relative;
+  width: 100%;
+  @include section-padding;
+
+  &.dark {
+    background-color: $color-charcoal-base;
+  }
+
+  &.surface {
+    background-color: $color-charcoal-surface;
+  }
+
+  &.borderTop {
+    border-top: 1px solid $color-border;
+  }
+
+  &.borderBottom {
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.container {
+  @include container;
+}
