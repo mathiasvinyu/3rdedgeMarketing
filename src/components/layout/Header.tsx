@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { Button } from '../ui/Button'
+import { Logo } from '../ui/Logo'
 import { MobileNav } from './MobileNav'
 import styles from './Header.module.scss'
 
@@ -27,9 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     <>
       <header className={styles.header} role="banner">
         <div className={styles.navContainer}>
-          <Link href="/" className={styles.logo} aria-label="3rd Edge Creative Home">
-            <span className={styles.logoMark} aria-hidden="true" />
-            <span>3rd<span className={styles.highlightText}>Edge</span></span>
+          <Link href="/" className={styles.logoLink} aria-label="3rd Edge Creative Home">
+            <Logo height={38} className={styles.logoSvg} />
           </Link>
 
           <nav className={styles.desktopNav} aria-label="Primary Navigation">

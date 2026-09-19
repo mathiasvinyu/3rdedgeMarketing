@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { Logo } from '../ui/Logo'
 import styles from './Footer.module.scss'
 
 export const Footer: React.FC = () => {
@@ -8,9 +9,8 @@ export const Footer: React.FC = () => {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.brandCol}>
-            <Link href="/" className={styles.logo} aria-label="3rd Edge Creative">
-              <span className={styles.dot} aria-hidden="true" />
-              <span>3rd<span className={styles.accent}>Edge</span></span>
+            <Link href="/" className={styles.logoLink} aria-label="3rd Edge Creative">
+              <Logo height={44} className={styles.logoSvg} />
             </Link>
             <p className={styles.tagline}>
               Good websites aren’t magic, they’re just done properly — clear thinking,
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <h4>Direct Conversation</h4>
             <ul>
               <li><a href="mailto:hello@3rdedge.co.za">hello@3rdedge.co.za</a></li>
-              <li><span style={{ color: 'var(--text-muted)' }}>Cape Town, South Africa</span></li>
+              <li><span style={{ color: 'var(--text-muted)' }}>Based in Johannesburg and working remotely.</span></li>
               <li><Link href="/admin">Payload CMS Login</Link></li>
             </ul>
           </div>
@@ -41,7 +41,6 @@ export const Footer: React.FC = () => {
 
         <div className={styles.bottomBar}>
           <p>© {new Date().getFullYear()} 3rd Edge Creative. All rights reserved.</p>
-          <p>WCAG 2.1 AA Compliant · Zero Buzzword Guarantee</p>
         </div>
       </div>
     </footer>

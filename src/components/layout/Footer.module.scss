@@ -21,25 +21,27 @@
 }
 
 .brandCol {
-  .logo {
+  .logoLink {
     display: inline-flex;
     align-items: center;
-    gap: $space-1;
-    font-family: $font-display;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: $color-text-primary;
-    margin-bottom: $space-2;
+    margin-bottom: $space-3;
+    text-decoration: none;
+    line-height: 1;
+    @include focus-visible;
+    transition: opacity $transition-fast;
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: $color-orange;
+    &:hover {
+      opacity: 0.9;
     }
+  }
 
-    .accent {
-      color: $color-orange;
+  .logoSvg {
+    display: block;
+    height: 42px;
+    width: auto;
+
+    @include md {
+      height: 46px;
     }
   }
 

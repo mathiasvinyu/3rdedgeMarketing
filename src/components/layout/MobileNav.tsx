@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { X } from 'lucide-react'
 import { Button } from '../ui/Button'
+import { Logo } from '../ui/Logo'
 import styles from './MobileNav.module.scss'
 
 interface MobileNavProps {
@@ -46,7 +47,9 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, onOpenCon
         aria-label="Mobile Navigation"
       >
         <div className={styles.header}>
-          <span className={styles.logoText}>3rd Edge</span>
+          <Link href="/" onClick={onClose} aria-label="3rd Edge Creative Home">
+            <Logo height={32} />
+          </Link>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close navigation menu">
             <X size={24} />
           </button>

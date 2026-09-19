@@ -25,28 +25,26 @@
   }
 }
 
-.logo {
-  display: flex;
+.logoLink {
+  display: inline-flex;
   align-items: center;
-  gap: $space-1;
-  font-family: $font-display;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: $color-text-primary;
   text-decoration: none;
+  line-height: 1;
   @include focus-visible;
+  transition: opacity $transition-fast;
 
-  .logoMark {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: $color-orange;
+  &:hover {
+    opacity: 0.9;
   }
+}
 
-  .highlightText {
-    color: $color-orange;
+.logoSvg {
+  display: block;
+  height: 36px;
+  width: auto;
+
+  @include lg {
+    height: 40px;
   }
 }
 
