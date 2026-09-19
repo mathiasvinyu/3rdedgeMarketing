@@ -63,6 +63,7 @@ export default async function InsightsPage() {
       <section style={{ paddingTop: '5rem', paddingBottom: '3.5rem' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '3.5rem' }}>
+            <h1 style={{ marginBottom: '0.75rem' }}>Insights — Notes from the work</h1>
             <div
               style={{
                 fontSize: '0.875rem',
@@ -70,12 +71,11 @@ export default async function InsightsPage() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
                 color: 'var(--accent-orange)',
-                marginBottom: '0.75rem',
+                marginBottom: '1.25rem',
               }}
             >
               Editorial Notes
             </div>
-            <h1 style={{ marginBottom: '1.25rem' }}>Insights — Notes from the work</h1>
             <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
               Things we’ve learned building for clients who can’t afford to get it wrong —
               some technical, some strategic, most of it stuff we wish someone had told us earlier.

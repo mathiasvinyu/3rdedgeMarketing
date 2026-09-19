@@ -6,8 +6,8 @@ export const OriginStory: React.FC = () => {
     <section id="origin" className={styles.storyWrapper} aria-labelledby="about-origin-title">
       <div className="container">
         <div className={styles.content}>
-          <div className={styles.eyebrow}>Our Story</div>
           <h1 id="about-origin-title">A rare combination, on purpose</h1>
+          <div className={styles.eyebrow}>Our Story</div>
 
           <p className={styles.lead}>
             3rd Edge Creative started with a simple observation: most people are good

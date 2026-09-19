@@ -16,14 +16,14 @@ export const HeroSection: React.FC = () => {
 
       <div className="container">
         <div className={styles.content}>
+          <h1 id="hero-headline" className={styles.headline}>
+            We Build Things That Work
+          </h1>
+
           <div className={styles.eyebrow}>
             <span className={styles.dot} aria-hidden="true" />
             <span>Digital Product Studio</span>
           </div>
-
-          <h1 id="hero-headline" className={styles.headline}>
-            We Build Things That Work
-          </h1>
 
           <p className={styles.subhead}>
             Good websites aren’t magic, they’re just done properly — clear thinking,

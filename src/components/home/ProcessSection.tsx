@@ -41,8 +41,8 @@ export const ProcessSection: React.FC = () => {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.stickyHeader}>
-            <div className={styles.label}>Execution Discipline</div>
             <h2>How We Work</h2>
+            <div className={styles.label}>Execution Discipline</div>
             <p>One unified, end-to-end craft — without junior handoffs.</p>
           </div>
 

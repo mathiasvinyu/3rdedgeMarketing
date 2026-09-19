@@ -27,8 +27,8 @@ export const ThinkingMoments: React.FC = () => {
     <section id="thinking-moments" className={styles.wrapper} aria-labelledby="how-we-think-title">
       <div className="container">
         <div className={styles.header}>
-          <div className={styles.label}>Operational Mindset</div>
           <h2 id="how-we-think-title">How We Think</h2>
+          <div className={styles.label}>Operational Mindset</div>
         </div>
 
         <div className={styles.momentsList}>

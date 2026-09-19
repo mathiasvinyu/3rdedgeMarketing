@@ -106,6 +106,7 @@ export default async function ServicesPage() {
       <section style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', marginBottom: '3.5rem' }}>
+            <h1 style={{ marginBottom: '0.75rem' }}>Services</h1>
             <div
               style={{
                 fontSize: '0.875rem',
@@ -113,12 +114,11 @@ export default async function ServicesPage() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
                 color: 'var(--accent-orange)',
-                marginBottom: '0.75rem',
+                marginBottom: '1.25rem',
               }}
             >
               Core Capabilities
             </div>
-            <h1 style={{ marginBottom: '1.25rem' }}>Services</h1>
             <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
               We design and build digital products for clients who can’t afford to get
               it wrong. Five core capabilities, front to back — without junior handoffs.

@@ -19,8 +19,8 @@ export const CaseStudySection: React.FC<CaseStudySectionProps> = ({ studies }) =
     <section id="case-studies" className={styles.caseStudyWrapper} aria-labelledby="cases-title">
       <div className="container">
         <div className={styles.header}>
-          <div className={styles.label}>Proof of Capability</div>
           <h2 id="cases-title">Built From Real, Named Work</h2>
+          <div className={styles.label}>Proof of Capability</div>
           <p>
             No unsourced stats or broken vanity scorecards. We measure our success by
             quiet failures diagnosed and verified outcomes delivered.

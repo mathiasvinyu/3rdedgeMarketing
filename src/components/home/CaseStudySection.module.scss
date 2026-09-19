@@ -12,18 +12,18 @@
   max-width: 720px;
   margin-bottom: $space-8;
 
+  h2 {
+    color: $color-text-primary;
+    margin-bottom: $space-2;
+  }
+
   .label {
     font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: $color-orange;
-    margin-bottom: $space-2;
-  }
-
-  h2 {
-    color: $color-text-primary;
-    margin-bottom: $space-2;
+    margin-bottom: $space-3;
   }
 
   p {

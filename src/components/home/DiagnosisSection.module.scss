@@ -12,6 +12,11 @@
   max-width: 960px;
 }
 
+.heading {
+  margin-bottom: $space-2;
+  color: $color-text-primary;
+}
+
 .label {
   font-family: $font-body;
   font-size: 0.875rem;
@@ -19,12 +24,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: $color-slate-light;
-  margin-bottom: $space-3;
-}
-
-.heading {
-  margin-bottom: $space-4;
-  color: $color-text-primary;
+  margin-bottom: $space-6;
 }
 
 .narrativeText {

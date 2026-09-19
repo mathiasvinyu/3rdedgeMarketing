@@ -110,18 +110,18 @@ export default async function InsightDetailPage({ params }: Props) {
           </Link>
 
           <header style={{ marginBottom: '2.5rem' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', marginBottom: '0.75rem' }}>
+              {post.title}
+            </h1>
             <div
               style={{
                 fontSize: '0.875rem',
                 color: 'var(--text-muted)',
-                marginBottom: '0.75rem',
+                marginBottom: '1.25rem',
               }}
             >
               Published {formattedDate} • {post.readTimeMinutes || 4} min read
             </div>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', marginBottom: '1.25rem' }}>
-              {post.title}
-            </h1>
             <p
               style={{
                 fontSize: '1.25rem',

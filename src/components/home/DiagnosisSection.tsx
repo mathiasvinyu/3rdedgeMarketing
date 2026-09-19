@@ -51,8 +51,8 @@ export const DiagnosisSection: React.FC = () => {
     <section id="diagnosis" ref={sectionRef} className={styles.diagnosisWrapper}>
       <div className="container">
         <div className={styles.inner}>
-          <div className={styles.label}>The Quiet Failures</div>
           <h2 className={styles.heading}>Why Most Sites Cost More Than They Should</h2>
+          <div className={styles.label}>The Quiet Failures</div>
 
           <p ref={textRef} className={styles.narrativeText}>
             <span className={styles.phrase}>Most sites don’t fail loudly. </span>
