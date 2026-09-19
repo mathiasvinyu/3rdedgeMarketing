@@ -9,40 +9,51 @@
 }
 
 .inner {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: $space-6;
 
   @include lg {
-    grid-template-columns: 1fr 2fr;
-    gap: $space-12;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: clamp(40px, 6vw, 96px);
     align-items: start;
   }
 }
 
-.stickyHeader {
+.titleColumn {
   @include lg {
     position: sticky;
     top: 120px;
   }
 
-  h2 {
-    color: $color-text-primary;
-    margin-bottom: $space-2;
-  }
-
-  .label {
-    font-size: 0.875rem;
-    font-weight: 600;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    font-size: 0.8125rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: $color-orange;
     margin-bottom: $space-3;
   }
 
-  p {
+  h2 {
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 800;
+    color: $color-text-primary;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 $space-3 0;
+  }
+
+  .subtext {
     color: $color-text-muted;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
   }
 }
 
@@ -59,9 +70,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
-  background-color: $color-border;
+  background-color: rgba(106, 114, 127, 0.2);
   border-radius: 2px;
   overflow: hidden;
 
@@ -75,24 +86,31 @@
   }
 }
 
-.proseCard {
-  background-color: $color-charcoal-surface;
-  border: 1px solid $color-border;
-  border-radius: $radius-md;
-  padding: $space-4;
-
-  @include md {
-    padding: $space-8;
-  }
-
+.textColumn {
   p {
+    font-family: $font-body;
     font-size: 1.125rem;
     line-height: 1.8;
-    color: $color-text-primary;
+    color: $color-text-secondary;
     margin-bottom: $space-4;
+
+    @include md {
+      font-size: 1.25rem;
+    }
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  .lead {
+    color: $color-text-primary;
+    font-weight: 500;
+    font-size: 1.2rem;
+
+    @include md {
+      font-size: 1.35rem;
+      line-height: 1.65;
     }
   }
 

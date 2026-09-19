@@ -37,13 +37,13 @@ export const ProcessSection: React.FC = () => {
   }, [])
 
   return (
-    <section id="process" ref={sectionRef} className={styles.processWrapper}>
+    <section id="process" ref={sectionRef} className={styles.processWrapper} aria-labelledby="process-title">
       <div className="container">
         <div className={styles.inner}>
-          <div className={styles.stickyHeader}>
-            <h2>How We Work</h2>
-            <div className={styles.label}>Execution Discipline</div>
-            <p>One unified, end-to-end craft, without junior handoffs.</p>
+          <div className={styles.titleColumn}>
+            <div className={styles.eyebrow}>Execution Discipline</div>
+            <h2 id="process-title">How We Work</h2>
+            <p className={styles.subtext}>One unified, end-to-end craft, without junior handoffs.</p>
           </div>
 
           <div className={styles.narrativeFlow}>
@@ -51,9 +51,9 @@ export const ProcessSection: React.FC = () => {
               <div ref={lineFillRef} className={styles.svgFill} />
             </div>
 
-            <div className={styles.proseCard}>
-              <p>
-                We start most projects with more questions than people expect, not just
+            <div className={styles.textColumn}>
+              <p className={styles.lead}>
+                We start most projects with more questions than people expect — not just
                 what you want built, but who’s actually going to use it and what they’re
                 trying to get done.
               </p>
@@ -63,7 +63,7 @@ export const ProcessSection: React.FC = () => {
                 finished product.
               </p>
               <p>
-                Then we build it properly,fast, accessible, tested against real
+                Then we build it properly — fast, accessible, tested against real
                 behaviour rather than a static mockup.
               </p>
               <p className={styles.accentSentence}>

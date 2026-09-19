@@ -3,13 +3,15 @@
 
 .ctaWrapper {
   background-color: $color-charcoal-base;
+  background-image: radial-gradient(circle at 50% 50%, rgba(234, 88, 7, 0.04) 0%, rgba(20, 22, 26, 0) 70%);
   @include section-padding;
-  text-align: center;
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 .box {
-  max-width: 760px;
+  // Mobile / compact baseline
+  max-width: 680px;
   margin: 0 auto;
   padding: $space-6;
   background-color: $color-charcoal-surface;
@@ -17,9 +19,10 @@
   border-radius: $radius-lg;
   position: relative;
   overflow: hidden;
+  text-align: center;
 
   @include md {
-    padding: $space-12;
+    padding: $space-8;
   }
 
   &::before {
@@ -31,17 +34,140 @@
     width: 240px;
     height: 2px;
     background: linear-gradient(90deg, transparent, $color-orange, transparent);
+
+    @include lg {
+      display: none;
+    }
   }
 
-  h2 {
-    color: $color-text-primary;
-    margin-bottom: $space-3;
+  // Desktop wide banner layout inspired by reference artifact
+  @include lg {
+    max-width: 1200px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 43% 57%;
+    border-radius: $radius-xl;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, #111419 0%, #0D0F13 100%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    text-align: left;
+    min-height: 420px;
+    align-items: stretch;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Visual Column (Architectural Craft Motif)
+// -----------------------------------------------------------------------------
+.visualSide {
+  display: none;
+
+  @include lg {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 420px;
+    background: #0C0E12;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.arcGraphic {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
+
+  .box:hover & {
+    transform: scale(1.015);
   }
 
-  p {
-    color: $color-text-secondary;
+  @include reduced-motion {
+    transition: none;
+    .box:hover & {
+      transform: none;
+    }
+  }
+}
+
+.visualOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+// -----------------------------------------------------------------------------
+// Content Column
+// -----------------------------------------------------------------------------
+.contentSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @include lg {
+    align-items: flex-start;
+    justify-content: center;
+    padding: $space-8 $space-8 $space-8 $space-12;
+  }
+}
+
+.title {
+  font-family: $font-display;
+  color: $color-text-primary;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: $space-3;
+
+  @include md {
+    font-size: 2rem;
+  }
+
+  @include lg {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 540px;
+    margin-bottom: $space-4;
+  }
+}
+
+.desc {
+  color: $color-text-secondary;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: $space-6;
+  max-width: 520px;
+
+  @include md {
+    font-size: 1.0625rem;
+  }
+
+  @include lg {
     font-size: 1.125rem;
     line-height: 1.7;
     margin-bottom: $space-6;
+  }
+}
+
+.emailNote {
+  margin-top: $space-3;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+
+  a {
+    color: $color-orange;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-orange-hover;
+    }
   }
 }

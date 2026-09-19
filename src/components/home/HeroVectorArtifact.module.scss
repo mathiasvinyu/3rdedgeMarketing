@@ -7,8 +7,8 @@
   max-width: 980px;
   margin: 0 auto;
   // Lighter shade background as requested
-  background: linear-gradient(180deg, #22262E 0%, #1A1D24 100%);
-  border: 1px solid rgba(168, 174, 182, 0.28);
+  background: linear-gradient(180deg, #20242B 0%, #171A20 100%);
+  border: 1px solid rgba(168, 174, 182, 0.18);
   border-bottom: none; // seamlessly clipped at the bottom
   border-radius: $radius-lg $radius-lg 0 0;
   padding: $space-2 $space-3 $space-3 $space-3;
@@ -17,9 +17,9 @@
   transform: rotateX(24deg);
   transform-origin: top center;
   box-shadow:
-    0 40px 100px -20px rgba(0, 0, 0, 0.9),
-    0 0 60px rgba(234, 88, 7, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 30px 70px -20px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(234, 88, 7, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 
   transition: transform $transition-base, border-color $transition-base;
 
