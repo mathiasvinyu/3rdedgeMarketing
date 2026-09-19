@@ -1,4 +1,8 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ServiceVectorArtifact } from './ServiceVectorArtifact'
 import styles from './ServiceCard.module.scss'
 
@@ -75,6 +79,69 @@ const defaultServiceMetadata: Record<
 }
 
 export const ServiceCard: React.FC<{ service: ServiceItemData }> = ({ service }) => {
+  const sectionRef = useRef<HTMLElement>(null)
+  const vectorColRef = useRef<HTMLDivElement>(null)
+  const contentColRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const ctx = gsap.context(() => {
+      // 1. Entrance animation triggered on scroll
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      })
+
+      tl.from(vectorColRef.current, {
+        opacity: 0,
+        y: 40,
+        scale: 0.96,
+        duration: 0.8,
+        ease: 'power2.out',
+      })
+
+      if (contentColRef.current) {
+        tl.from(
+          contentColRef.current.children,
+          {
+            opacity: 0,
+            y: 22,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'power2.out',
+          },
+          '-=0.5'
+        )
+      }
+
+      // 2. Subtle continuous scroll parallax on desktop
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches
+      if (isDesktop && vectorColRef.current) {
+        gsap.to(vectorColRef.current, {
+          y: -25,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.8,
+          },
+        })
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   const meta = defaultServiceMetadata[service.number] || {
     categoryBadges: ['CAPABILITY', 'IN-HOUSE'],
     features: service.capabilities
@@ -94,18 +161,19 @@ export const ServiceCard: React.FC<{ service: ServiceItemData }> = ({ service })
 
   return (
     <article
+      ref={sectionRef}
       className={styles.serviceSection}
       aria-labelledby={`service-${service.number}`}
       data-service-number={service.number}
     >
       <div className={styles.splitGrid}>
         {/* Vector Canvas Column (Borrowed from Hero Graphic standard) */}
-        <div className={styles.vectorColumn}>
+        <div ref={vectorColRef} className={styles.vectorColumn}>
           <ServiceVectorArtifact number={service.number} title={service.title} />
         </div>
 
         {/* Content Column (Editorial, Checklists, Tech Stack) */}
-        <div className={styles.contentColumn}>
+        <div ref={contentColRef} className={styles.contentColumn}>
           {/* Top Category Badges */}
           {categoryBadges && categoryBadges.length > 0 && (
             <div className={styles.badgeRow}>

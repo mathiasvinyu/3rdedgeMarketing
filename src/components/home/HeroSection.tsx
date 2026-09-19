@@ -1,7 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Button } from '../ui/Button'
 import { HeroCanvas } from './HeroCanvas'
 import { ContactModal } from '../ui/ContactModal'
@@ -10,13 +12,54 @@ import styles from './HeroSection.module.scss'
 
 export const HeroSection: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
+  const centerContentRef = useRef<HTMLDivElement>(null)
+  const stageRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const ctx = gsap.context(() => {
+      // 1. Text & action group parallax upward with subtle fade
+      gsap.to(centerContentRef.current, {
+        y: -60,
+        opacity: 0.8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: 'top top',
+          end: 'bottom 40%',
+          scrub: 0.6,
+        },
+      })
+
+      // 2. Perspective stage wrapper parallaxes smoothly into the viewport
+      gsap.to(stageRef.current, {
+        y: -40,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: 'top top',
+          end: 'bottom 20%',
+          scrub: 0.8,
+        },
+      })
+    }, heroRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <section id="hero" className={styles.heroWrapper} aria-labelledby="hero-headline">
+    <section id="hero" ref={heroRef} className={styles.heroWrapper} aria-labelledby="hero-headline">
       {/* <HeroCanvas /> */}
 
       <div className="container">
-        <div className={styles.centerContent}>
+        <div ref={centerContentRef} className={styles.centerContent}>
           <h1 id="hero-headline" className={styles.headline}>
             We Build Things That Work
           </h1>
@@ -53,7 +96,7 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.perspectiveStageWrapper}>
+        <div ref={stageRef} className={styles.perspectiveStageWrapper}>
           <HeroVectorArtifact />
         </div>
       </div>
