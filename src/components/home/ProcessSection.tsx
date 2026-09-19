@@ -43,7 +43,7 @@ export const ProcessSection: React.FC = () => {
           <div className={styles.stickyHeader}>
             <h2>How We Work</h2>
             <div className={styles.label}>Execution Discipline</div>
-            <p>One unified, end-to-end craft — without junior handoffs.</p>
+            <p>One unified, end-to-end craft, without junior handoffs.</p>
           </div>
 
           <div className={styles.narrativeFlow}>
@@ -53,7 +53,7 @@ export const ProcessSection: React.FC = () => {
 
             <div className={styles.proseCard}>
               <p>
-                We start most projects with more questions than people expect — not just
+                We start most projects with more questions than people expect, not just
                 what you want built, but who’s actually going to use it and what they’re
                 trying to get done.
               </p>
@@ -63,7 +63,7 @@ export const ProcessSection: React.FC = () => {
                 finished product.
               </p>
               <p>
-                Then we build it properly — fast, accessible, tested against real
+                Then we build it properly,fast, accessible, tested against real
                 behaviour rather than a static mockup.
               </p>
               <p className={styles.accentSentence}>

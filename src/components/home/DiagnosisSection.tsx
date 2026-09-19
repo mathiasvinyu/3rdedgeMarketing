@@ -52,11 +52,13 @@ export const DiagnosisSection: React.FC = () => {
       <div className="container">
         <div className={styles.inner}>
           <h2 className={styles.heading}>Why Most Sites Cost More Than They Should</h2>
-          <div className={styles.label}>The Quiet Failures</div>
+          <div className={styles.eyebrow}>
+            <span>The Quiet Failures</span>
+          </div>
 
           <p ref={textRef} className={styles.narrativeText}>
             <span className={styles.phrase}>Most sites don’t fail loudly. </span>
-            <span className={styles.phrase}>They fail quietly — </span>
+            <span className={styles.phrase}>They fail quietly, </span>
             <span className={styles.phrase}>a form that’s slightly too fiddly on mobile, </span>
             <span className={styles.phrase}>a menu that buries the one thing people actually came for, </span>
             <span className={styles.phrase}>a page that takes just long enough to lose someone’s patience. </span>

@@ -13,7 +13,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section id="hero" className={styles.heroWrapper} aria-labelledby="hero-headline">
-      <HeroCanvas />
+      {/* <HeroCanvas /> */}
 
       <div className="container">
         <div className={styles.centerContent}>
@@ -21,13 +21,13 @@ export const HeroSection: React.FC = () => {
             We Build Things That Work
           </h1>
 
-          <div className={styles.eyebrow}>
+          {/*<div className={styles.eyebrow}>
             <span>Digital Product Studio</span>
-          </div>
+          </div> */}
 
           <p className={styles.subhead}>
-            Good websites aren’t magic, they’re just done properly — clear thinking,
-            honest design, solid engineering. That’s what we do, for clients who’d
+            Good websites aren’t magic, they’re just done properly, with clear thinking,
+            honest design, and solid engineering. That’s what we do for clients who’d
             rather not gamble on their digital presence.
           </p>
 
@@ -43,7 +43,7 @@ export const HeroSection: React.FC = () => {
             </Button>
 
             <Button
-              variant="secondary"
+              variant="ghost"
               size="lg"
               href="#diagnosis"
               aria-label="Learn how we diagnose quiet failures"

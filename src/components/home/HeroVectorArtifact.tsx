@@ -152,7 +152,7 @@ export const HeroVectorArtifact: React.FC = () => {
             <line x1="80" y1="15" x2="80" y2="295" stroke="#6A727F" strokeWidth="0.8" strokeDasharray="4 4" />
             <line x1="460" y1="15" x2="460" y2="295" stroke="#6A727F" strokeWidth="0.8" strokeDasharray="4 4" />
             <line x1="840" y1="15" x2="840" y2="295" stroke="#6A727F" strokeWidth="0.8" strokeDasharray="4 4" />
-            
+
             <circle cx="80" cy="35" r="2.5" fill="#6A727F" />
             <circle cx="460" cy="120" r="2.5" fill="#EA5807" />
             <circle cx="840" cy="210" r="2.5" fill="#6A727F" />
@@ -169,7 +169,7 @@ export const HeroVectorArtifact: React.FC = () => {
               <rect
                 id="card-left-rect"
                 width="400"
-                height="250"
+                height="150"
                 rx="12"
                 fill="url(#cardBgLeft)"
                 stroke="#383E4B"
@@ -277,7 +277,7 @@ export const HeroVectorArtifact: React.FC = () => {
               <rect
                 id="card-right-rect"
                 width="400"
-                height="250"
+                height="150"
                 rx="12"
                 fill="url(#cardBgRight)"
                 stroke="#3E4554"
@@ -311,7 +311,7 @@ export const HeroVectorArtifact: React.FC = () => {
               {/* Performance Metrics Table */}
               <g className="card-right-item" transform="translate(20, 84)">
                 <rect width="360" height="44" rx="6" fill="#16181F" stroke="#2E343F" strokeWidth="1" />
-                
+
                 <g transform="translate(20, 16)">
                   <text x="0" y="0" fill="#8E96A4" fontSize="7.5" fontFamily="monospace">CORE WEB VITALS</text>
                   <text x="0" y="16" fill="#F3F4F6" fontSize="12" fontWeight="700" fontFamily="sans-serif">LCP: 0.78s</text>

@@ -11,20 +11,20 @@
   border: 1px solid rgba(168, 174, 182, 0.28);
   border-bottom: none; // seamlessly clipped at the bottom
   border-radius: $radius-lg $radius-lg 0 0;
-  padding: $space-3 $space-4 $space-6 $space-4;
-  
+  padding: $space-2 $space-3 $space-3 $space-3;
+
   // 3D Perspective tilt matching the sketch
   transform: rotateX(24deg);
   transform-origin: top center;
-  box-shadow: 
+  box-shadow:
     0 40px 100px -20px rgba(0, 0, 0, 0.9),
     0 0 60px rgba(234, 88, 7, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
+
   transition: transform $transition-base, border-color $transition-base;
 
   @include md {
-    padding: $space-4 $space-6 $space-8 $space-6;
+    padding: $space-2 $space-4 $space-3 $space-4;
     transform: rotateX(26deg);
   }
 
@@ -37,8 +37,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: $space-3;
-  margin-bottom: $space-3;
+  padding-bottom: $space-2;
+  margin-bottom: $space-2;
   border-bottom: 1px solid rgba(106, 114, 127, 0.22);
 }
 
@@ -52,9 +52,17 @@
     height: 10px;
     border-radius: 50%;
 
-    &:nth-child(1) { background-color: rgba(234, 88, 7, 0.85); }
-    &:nth-child(2) { background-color: rgba(255, 204, 0, 0.75); }
-    &:nth-child(3) { background-color: rgba(106, 114, 127, 0.65); }
+    &:nth-child(1) {
+      background-color: rgba(234, 88, 7, 0.85);
+    }
+
+    &:nth-child(2) {
+      background-color: rgba(255, 204, 0, 0.75);
+    }
+
+    &:nth-child(3) {
+      background-color: rgba(106, 114, 127, 0.65);
+    }
   }
 
   .windowTitle {

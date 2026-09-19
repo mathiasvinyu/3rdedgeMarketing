@@ -19,7 +19,7 @@ export const ClosingCTA: React.FC<ClosingCTAProps> = ({ id = 'closing-cta' }) =>
         <div className={styles.box}>
           <h2 id="closing-cta-title">Let’s talk about what you’re building</h2>
           <p>
-            If you’ve got a project in mind — or you’re just not sure where to start —
+            If you’ve got a project in mind, or you’re just not sure where to start,
             we’re happy to have a conversation, no pressure and no commitment.
           </p>
 
