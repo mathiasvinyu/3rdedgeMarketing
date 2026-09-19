@@ -27,16 +27,20 @@ export const ThinkingMoments: React.FC = () => {
     <section id="thinking-moments" className={styles.wrapper} aria-labelledby="how-we-think-title">
       <div className="container">
         <div className={styles.header}>
-          <h2 id="how-we-think-title">How We Think</h2>
           <div className={styles.label}>Operational Mindset</div>
+          <h2 id="how-we-think-title">How We Think</h2>
         </div>
 
         <div className={styles.momentsList}>
           {moments.map((m) => (
-            <article key={m.number} className={styles.momentCard}>
-              <div className={styles.number}>{m.number}</div>
-              <h3>{m.title}</h3>
-              <p>{m.narrative}</p>
+            <article key={m.number} className={styles.momentItem}>
+              <div className={styles.itemHeader}>
+                <span className={styles.number}>{m.number}</span>
+                <span className={styles.metaDivider} aria-hidden="true">/</span>
+                <span className={styles.metaLabel}>Moment {m.number}</span>
+              </div>
+              <h3 className={styles.title}>{m.title}</h3>
+              <p className={styles.narrative}>{m.narrative}</p>
             </article>
           ))}
         </div>

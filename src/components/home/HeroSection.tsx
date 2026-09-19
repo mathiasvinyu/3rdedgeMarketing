@@ -43,7 +43,7 @@ export const HeroSection: React.FC = () => {
             </Button>
 
             <Button
-              variant="ghost"
+              variant="outline"
               size="lg"
               href="#diagnosis"
               aria-label="Learn how we diagnose quiet failures"

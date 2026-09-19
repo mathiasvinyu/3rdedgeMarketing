@@ -1,25 +1,41 @@
 import React from 'react'
 import styles from './TeamCommitment.module.scss'
 
+const competencies = [
+  'React',
+  'Next.js',
+  'Node.js',
+  'TypeScript',
+  'Accessibility (WCAG 2.1 AA)',
+  'Core Web Vitals',
+  'CMS Architecture',
+  'Design Systems',
+]
+
 export const TeamCommitment: React.FC = () => {
   return (
-    <section id="team-commitment" className={styles.wrapper} aria-label="Team Commitment and Capabilities">
+    <section id="team-commitment" className={styles.wrapper} aria-labelledby="team-commitment-title">
       <div className="container">
-        <div className={styles.commitmentBox}>
-          <div className={styles.label} style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--accent-orange)', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+        <div className={styles.statementSection}>
+          <div id="team-commitment-title" className={styles.eyebrow}>
             Senior delivery, end to end
           </div>
-          <p>
+
+          <p className={styles.statement}>
             One more thing worth knowing: whoever you talk to at the start is who
             actually builds it — no handoff to a junior team partway through.
           </p>
-        </div>
 
-        <div className={styles.keywordsLine}>
-          <span>
-            Core technical competencies: React, Next.js, Node.js, TypeScript, Accessibility
-            (WCAG 2.1 AA), Core Web Vitals, CMS Architecture, Design Systems.
-          </span>
+          <div className={styles.competenciesBlock}>
+            <span className={styles.competenciesLabel}>Core technical competencies:</span>
+            <div className={styles.pillsList}>
+              {competencies.map((tech) => (
+                <span key={tech} className={styles.techPill}>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

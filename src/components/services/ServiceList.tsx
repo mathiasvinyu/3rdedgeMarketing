@@ -7,9 +7,10 @@ export const ServiceList: React.FC<{ services: ServiceItemData[] }> = ({ service
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '2rem',
-        maxWidth: '960px',
+        gap: '3rem',
+        maxWidth: '1240px',
         margin: '0 auto',
+        width: '100%',
       }}
     >
       {services.map((service) => (
