@@ -6,7 +6,8 @@ const competencies = [
   'Next.js',
   'Node.js',
   'TypeScript',
-  'Accessibility (WCAG 2.1 AA)',
+  'PHP & WordPress',
+  'Accessibility (WCAG Compliance)',
   'Core Web Vitals',
   'CMS Architecture',
   'Design Systems',
@@ -23,7 +24,7 @@ export const TeamCommitment: React.FC = () => {
 
           <p className={styles.statement}>
             One more thing worth knowing: whoever you talk to at the start is who
-            actually builds it — no handoff to a junior team partway through.
+            actually builds it, no handoff to a junior team partway through.
           </p>
 
           <div className={styles.competenciesBlock}>

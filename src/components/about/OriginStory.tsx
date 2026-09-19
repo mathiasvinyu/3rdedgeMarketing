@@ -14,7 +14,7 @@ export const OriginStory: React.FC = () => {
           <div className={styles.textColumn}>
             <p className={styles.lead}>
               3rd Edge Creative started with a simple observation: most people are good
-              at design, or good at engineering — rarely both, and rarely well enough to
+              at design, or good at engineering, rarely both, and rarely well enough to
               move fluently between the two. We built the agency around closing that
               gap. We design and build, end to end, without a handoff where ideas get
               lost in translation.
@@ -22,8 +22,8 @@ export const OriginStory: React.FC = () => {
 
             <p>
               Even now, with AI reshaping how software gets made, that combination is
-              still surprisingly rare. Understanding both sides — how something should
-              feel and how it actually gets built — is still what lets us deliver
+              still surprisingly rare. Understanding both sides, how something should
+              feel and how it actually gets built, is still what lets us deliver
               applications that work in practice, not just in a mockup.
             </p>
           </div>
